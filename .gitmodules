@@ -1,0 +1,21 @@
+[submodule "Lab-2"]
+	path = Lab-2
+	url = https://github.com/ShriRadhey-Mishra/Lab-2
+[submodule "Repo1"]
+	path = Repo1
+	url = https://github.com/ShriRadhey-Mishra/Repo1
+[submodule "Repo2"]
+	path = Repo2
+	url = https://github.com/ShriRadhey-Mishra/Repo2
+[submodule "Repo3"]
+	path = Repo3
+	url = https://github.com/ShriRadhey-Mishra/Repo3
+[submodule "ShriRadhey-Mishra.github.io"]
+	path = ShriRadhey-Mishra.github.io
+	url = https://github.com/ShriRadhey-Mishra/ShriRadhey-Mishra.github.io
+[submodule "DevOpsLabFSAI-B3"]
+	path = DevOpsLabFSAI-B3
+	url = https://github.com/upessocs/DevOpsLabFSAI-B3
+[submodule "Lab8"]
+	path = Lab8
+	url = https://github.com/ShriRadhey-Mishra/Lab8
