@@ -16,9 +16,6 @@
 [submodule "DevOpsLabFSAI-B3"]
 	path = DevOpsLabFSAI-B3
 	url = https://github.com/upessocs/DevOpsLabFSAI-B3
-[submodule "Lab8"]
-	path = Lab8
-	url = https://github.com/ShriRadhey-Mishra/Lab8
 [submodule "Lab_5"]
 	path = Lab_5
 	url = https://github.com/ShriRadhey-Mishra/Lab_5.git
