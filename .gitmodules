@@ -19,3 +19,6 @@
 [submodule "ShriRadhey-Mishra.github.io"]
 	path = ShriRadhey-Mishra.github.io
 	url = https://github.com/shriradhey-mishra/ShriRadhey-Mishra.github.io
+[submodule "Lab_8"]
+	path = Lab_8
+	url = https://github.com/ShriRadhey-Mishra/Lab_8.git
