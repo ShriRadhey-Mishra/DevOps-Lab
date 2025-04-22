@@ -1,6 +1,3 @@
-[submodule "Repo2"]
-	path = Repo2
-	url = https://github.com/ShriRadhey-Mishra/Repo2
 [submodule "Repo3"]
 	path = Repo3
 	url = https://github.com/ShriRadhey-Mishra/Repo3
