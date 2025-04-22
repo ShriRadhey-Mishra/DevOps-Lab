@@ -13,9 +13,6 @@
 [submodule "Lab_5"]
 	path = Lab_5
 	url = https://github.com/shriradhey-mishra/Lab_5
-[submodule "Lab_8"]
-	path = Lab_8
-	url = https://github.com/shriradhey-mishra/Lab_8
 [submodule "DevOpsLabFSAI-B3"]
 	path = DevOpsLabFSAI-B3
 	url = https://github.com/shriradhey-mishra/DevOpsLabFSAI-B3
