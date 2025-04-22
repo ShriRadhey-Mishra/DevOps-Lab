@@ -147,7 +147,7 @@ Jenkins is an open-source automation server that helps automate parts of the sof
 
 In this lab, we configured a Jenkins pipeline to automate the build and deployment of our Dockerized FastAPI Python application. On every code push or manual build trigger, Jenkins fetches the code, builds a Docker image, and pushes it to Docker Hub.
 
-### 🔧 Pipeline Job:
+### Pipeline Job:
 We created a Pipeline Job in Jenkins to define our build steps in code (using a `Jenkinsfile`):
 
 1. `agent any`: Tells Jenkins to run the pipeline on any available agent node.  
@@ -156,7 +156,7 @@ We created a Pipeline Job in Jenkins to define our build steps in code (using a 
 4. **Stage: Build Docker Image** – Builds the Docker image from the Dockerfile in the project directory.  
 5. **Stage: Push Docker Image** – Pushes the built image to our Docker Hub repository.
 
-### 📄 Reference Jenkinsfile:
+### Reference Jenkinsfile:
 ```groovy
 pipeline {
     agent any
