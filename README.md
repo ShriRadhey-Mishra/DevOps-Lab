@@ -1,10 +1,10 @@
-# DevOps Lab Work
+ # DevOps Lab Work
 
 **Shri Radhey Mishra – 500110514**
 
 ---
 
-## DevOps Lab 1 – Basic Git Commands
+## DevOps Lab 1 – Basic Git Commands (Lab-2)
 
 [https://github.com/ShriRadhey-Mishra/Lab-2.git]
 
@@ -21,7 +21,7 @@ Using these commands, we can make a directory in our Local machine, initialize i
 
 ---
 
-## DevOps Lab 2 – Branching and Merging
+## DevOps Lab 2 – Branching and Merging (Lab-2)
 
 [https://github.com/ShriRadhey-Mishra/Lab-2.git]
 
@@ -37,7 +37,7 @@ We use these commands to perform a merge, where we make some commits in the main
 
 ---
 
-## DevOps Lab 3 – Submodules
+## DevOps Lab 3 – Submodules (Repo1, Repo2, Repo3)
 
 - [https://github.com/shriradhey-mishra/repo1.git]
 - [https://github.com/shriradhey-mishra/repo2.git]
@@ -51,7 +51,7 @@ In this lab particularly, we created 3 different repositories namely, Repo1, Rep
 
 ---
 
-## DevOps Lab 4 – Hosting using GitHub Pages
+## DevOps Lab 4 – Hosting using GitHub Pages (ShriRadhey-Mishra.github.io, Repo1)
 
 [https://github.com/ShriRadhey-Mishra/ShriRadhey-Mishra.github.io.git]
 
@@ -70,7 +70,7 @@ Using GitHub Pages, we can simply host any repository we want.
 
 ---
 
-## DevOps Lab 5 – Subversion
+## DevOps Lab 5 – Subversion (Lab_5)
 
 [https://github.com/ShriRadhey-Mishra/Lab_5.git]
 
@@ -91,7 +91,7 @@ Using these commands, we can check out a working copy from a remote SVN reposito
 
 ---
 
-## DevOps Lab 6 – Containerization using Docker
+## DevOps Lab 6 – Containerization using Docker (Lab_8)
 
 [https://github.com/ShriRadhey-Mishra/Lab_8.git]
 
@@ -114,7 +114,7 @@ Using Docker in this lab helped us to package the Python + FastAPI application i
 
 ---
 
-## DevOps Lab 7 – Build using GitHub Actions
+## DevOps Lab 7 – Build using GitHub Actions (Lab_8)
 
 [https://github.com/ShriRadhey-Mishra/Lab_8.git]
 
@@ -139,6 +139,56 @@ Using this GitHub Actions workflow, we automated the build and deployment of our
 
 ---
 
-## DevOps Lab 8 – Build using Jenkins
+## DevOps Lab 8 – Build using Jenkins (Lab_8)
 
 [https://github.com/ShriRadhey-Mishra/Lab_8.git]
+
+Jenkins is an open-source automation server that helps automate parts of the software development process, especially building, testing, and deploying. Unlike GitHub Actions, which is cloud-native and tightly integrated with GitHub, Jenkins provides a flexible, self-hosted solution for CI/CD workflows.
+
+In this lab, we configured a Jenkins pipeline to automate the build and deployment of our Dockerized FastAPI Python application. On every code push or manual build trigger, Jenkins fetches the code, builds a Docker image, and pushes it to Docker Hub.
+
+### Pipeline Job:
+We created a Pipeline Job in Jenkins to define our build steps in code (using a `Jenkinsfile`):
+
+1. `agent any`: Tells Jenkins to run the pipeline on any available agent node.  
+2. **Stage: Checkout** – Checks out the source code from the connected Git repository.  
+3. **Stage: Docker Login** – Logs into Docker Hub using credentials configured in Jenkins Credential Manager.  
+4. **Stage: Build Docker Image** – Builds the Docker image from the Dockerfile in the project directory.  
+5. **Stage: Push Docker Image** – Pushes the built image to our Docker Hub repository.
+
+### Reference Jenkinsfile:
+```groovy
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds') // Jenkins credentials ID
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-username/your-repo.git'
+            }
+        }
+
+        stage('Docker Login') {
+            steps {
+                sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t yourdockerhubusername/fast_api_dockerize .'
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                sh 'docker push yourdockerhubusername/fast_api_dockerize'
+            }
+        }
+    }
+}
+
